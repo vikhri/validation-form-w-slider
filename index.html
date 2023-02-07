@@ -25,7 +25,7 @@
 </div>
 <div class="form-group">
 <label class='form__label' for='tel'>Phone number</label>
-<input class='form__input' name='tel' id='tel' type="tel" placeholder="+66 066 666 66 66" pattern="^+[0-9]{13}$" ></input>
+<input class='form__input' name='tel' id='tel' type="tel" placeholder="+66 066 666 66 66" pattern="/^\+[0-9]{13}$/" ></input>
 </div>
 <div class="form-group">
 <label class='form__label' for='cookie-type'>Sort</label>
@@ -36,7 +36,7 @@
 	<option>Cracker</option>
 </select>
 </div>
-	<div class="form__slider form-group" id="slider"></div>
+	<div class="form__slider" id="slider"></div>
 	<div class="form__field">
 	<label class="form__label">Quantity</label>
 	<input class="form__input form__input--quantity" name="quantity" id='quantity' type="text">

@@ -1,7 +1,8 @@
 window.onload = function () {
 
     let form = document.querySelector("form");
-    let name = document.getElementById('name');   
+    let name = document.getElementById('name'); 
+    let tel =  document.getElementById('tel');
 
     
     let pristine = new Pristine(form);
@@ -14,7 +15,7 @@ window.onload = function () {
         // class of the parent element where error text element is appended
         errorTextParent: 'form-group',
         // type of element to create for the error text
-        errorTextTag: 'div',
+        errorTextTag: 'span',
         // class of the error text element
         errorTextClass: 'text-help' 
     };
@@ -28,22 +29,21 @@ window.onload = function () {
         return false;
     }, "The first character must be capitalized", 2, false);
     
-
-    // name.addEventListener('change', function (e) {
-    //     e.preventDefault();
-        
-    //     // check if the form is valid
-    //     var isValid = pristine.validate(); // returns true or false
-
-    //     alert(isValid ? 'Имя написано нормально' : 'Имя с большой буквы напиши')
-    //  }); 
+    // pristine.addValidator(tel, function(value) {
+    //     // here `this` refers to the respective input element
+    //     if (){
+    //         return false;
+    //     }
+    //     return true;
+    // }, "Wrong phone format", 2, false);
+  
 
      form.addEventListener('submit', function (e) {
          e.preventDefault();
         
         // check if the form is valid
         var isValid = pristine.validate(); // returns true or false
-        alert(isValid ? 'отправляем' : 'не отправляем')
+        alert(isValid ? 'Form is valid' : 'Form is not valid')
      }); 
 
 };
