@@ -19,31 +19,28 @@ window.onload = function () {
         // class of the error text element
         errorTextClass: 'text-help' 
     };
+
       
     // A validator to check if the first letter is capitalized
     pristine.addValidator(name, function(value) {
-        // here `this` refers to the respective input element
-        if (value.length && value[0] === value[0].toUpperCase()){
+            if (value.length && value[0] === value[0].toUpperCase()){
             return true;
         }
         return false;
     }, "The first character must be capitalized", 2, false);
     
-    // pristine.addValidator(tel, function(value) {
-    //     // here `this` refers to the respective input element
-    //     if (){
-    //         return false;
-    //     }
-    //     return true;
-    // }, "Wrong phone format", 2, false);
-  
+    //set mask for phone number
+    var element = document.getElementById('tel');
+    var maskOptions = {
+      mask: '+{7}(000)000-00-00'
+    };
+    var mask = IMask(element, maskOptions);
+
 
      form.addEventListener('submit', function (e) {
          e.preventDefault();
-        
-        // check if the form is valid
-        var isValid = pristine.validate(); // returns true or false
-        alert(isValid ? 'Form is valid' : 'Form is not valid')
+         var isValid = pristine.validate(); 
+        alert(isValid ? 'Thank you for the order' : 'Something wrong with form. Please try again')
      }); 
 
 };
